@@ -1,6 +1,6 @@
 # Development Skills Format
 
-> Status: approved v1.
+> Status: approved v2.
 
 ## Purpose
 
@@ -62,11 +62,24 @@ concerns and must not be conflated. The canonical Skill is the one under
 `skills/development/`, whatever a given harness does to find it.
 
 **OpenCode.** OpenCode consumes the canonical Development Skills directly. It
-supports explicit additional local Skill sources through the `skills` array in
-`opencode.json` or `opencode.jsonc`, and a relative source such as
+supports explicit additional local Skill sources through the `skills.paths`
+array in `opencode.json` or `opencode.jsonc`, and a relative source such as
 `./skills/development` resolves from the active OpenCode working directory.
 Configuring that source loads our canonical Skills with no copying and no sync
 step.
+
+The configuration shape is:
+
+```json
+"skills": {
+  "paths": [
+    "./skills/development"
+  ]
+}
+```
+
+`skills` is an object with a `paths` array, not an array itself. OpenCode
+rejects an invalid config rather than degrading, so the shape matters.
 
 OpenCode also discovers project skills natively from `.opencode/skills/`,
 `.claude/skills/`, and `.agents/skills/`. Those locations stay valid, but none
