@@ -10,6 +10,21 @@ implementation detail.
 
 An outdoor activity such as Fishing. Future domain packs may introduce others.
 
+**AI Capability**
+
+A named product or runtime AI function that defines what the platform wants AI
+to accomplish, including its input and output contract and any grounding, tool,
+or structured-output expectations. Business-domain code requests a capability
+rather than a specific model or provider.
+
+**AI Runtime**
+
+The platform abstraction through which all product and runtime AI execution
+occurs. It owns model and provider abstraction, capability execution, routing,
+tool adapters, structured-output validation, fallback, retries where
+appropriate, observability, and related execution concerns without replacing
+domain ownership.
+
 **Asset**
 
 A reusable resource used or referenced by the platform, including files, links
@@ -77,10 +92,22 @@ This list is not exhaustive.
 Reusable or publishable material such as an article, guide, lesson, video,
 marketing creative, or social content.
 
+**Context Builder**
+
+The component or procedure that assembles only the platform context required for
+a specific AI Capability or interaction, subject to permissions, privacy,
+organization boundaries, provenance requirements, and data minimization.
+
 **Contributor**
 
 A Person or Organization that supplies content, observations, research,
 verification, feedback, or other useful contributions.
+
+**Development Skill**
+
+A version-controlled reusable procedure used by AI development agents to build,
+review, or modify the platform consistently with approved project rules and
+architecture.
 
 **Domain Pack**
 
@@ -176,6 +203,12 @@ relationships.
 Reusable capabilities and concepts that must not be hard-coded to Catch America
 or fishing.
 
+**Product AI Skill**
+
+A version-controlled reusable procedure executed by product or runtime AI as
+part of an AI Capability. It defines how a repeatable AI job is performed but
+does not own business truth, policy, authority, or persistent domain state.
+
 **Provenance**
 
 The traceable history of where information came from, how it was acquired or
@@ -199,10 +232,25 @@ business activity, including cash earnings, reward currencies such as CatchCash,
 credits, ledgers, redemption, gifting, transfers, and earning entitlements.
 Actual cash settlement remains a Finance responsibility.
 
+**Routing Policy**
+
+Configuration and rules used by the AI Runtime to select an appropriate model or
+provider path for an AI Capability based on approved technical criteria such as
+capability requirements, quality, latency, cost, availability, modality, tool
+support, organization policy, and eval results. Routing Policy is infrastructure
+and configuration, not product business logic.
+
 **Signal**
 
 Potentially meaningful information or a pattern that warrants attention or
 verification but is not yet established knowledge.
+
+**Skill**
+
+A version-controlled reusable procedure describing how an AI agent performs a
+repeatable job. A Skill may define required context, tools, steps, checks,
+outputs, and escalation behavior, but it does not own facts, business rules,
+policy, permissions, authority, or persistent business memory.
 
 **Source**
 
