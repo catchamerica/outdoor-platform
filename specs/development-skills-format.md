@@ -1,6 +1,6 @@
 # Development Skills Format
 
-> Status: approved v2.
+> Status: approved v3.
 
 ## Purpose
 
@@ -234,8 +234,13 @@ that cannot work identically everywhere should say so rather than pretend.
 
 ## Validation
 
-Validation for a Development Skill means evidence that an agent following it
-produces the intended behavior, and that an agent without it does not.
+Validation for a Development Skill requires evidence that agents using it
+produce its intended behavior and respect its limits. Compare against baseline
+behavior and report whether the Skill improves outcomes, preserves existing
+behavior, or introduces unnecessary work. Baseline success does not disqualify a
+Skill, but equivalent results do not establish added benefit. Human approval
+must consider the Skill's purpose, observed behavior, maintenance burden, and
+evidence limitations.
 
 **Method.** Use representative tasks or pressure scenarios run against an agent,
 following the Superpowers approach: establish baseline behavior without the
